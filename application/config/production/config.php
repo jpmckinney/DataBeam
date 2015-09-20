@@ -5,8 +5,8 @@
 $config['sqlite_data_path'] 	= '/path/to/db/'; // eg /var/www/databeam/uploads/db/
 
 // OAuth Settings
-$config['github_oauth_id'] = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-$config['github_oauth_secret'] = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+$config['github_oauth_id'] = getenv('GITHUB_CLIENT_ID');
+$config['github_oauth_secret'] = getenv('GITHUB_CLIENT_SECRET');
 
 // You shouldn't need to edit this unless you're not hosting this a the root of your server
 $config['github_oauth_redirect'] =  'http://' . $_SERVER['SERVER_NAME'] . '/auth/session/github';
