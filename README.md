@@ -6,7 +6,7 @@ A fork of [GSA/DataBeam](https://github.com/GSA/DataBeam) to deploy to Heroku. R
 
 ```
 brew tap homebrew/php
-brew install php53
+brew install php55
 brew install composer
 composer install
 ```
