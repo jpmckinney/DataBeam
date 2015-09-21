@@ -231,7 +231,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = getenv('ENCRYPTION_KEY'); // Heroku
+$config['encryption_key'] = getenv('ENCRYPTION_KEY') === FALSE ? 'X3b+dvBVoNhW0H35' : getenv('ENCRYPTION_KEY'); // Heroku
 
 /*
 |--------------------------------------------------------------------------
