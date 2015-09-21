@@ -1,11 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-/*
-|--------------------------------------------------------------------------
-| Upload Arguments
-|--------------------------------------------------------------------------
-*/
-
-$config['upload_path'] = '/your/file/path/'; // absolute path
-$config['allowed_types'] = 'csv'; //'gif|jpg|png|csv|txt|JPG|GIF|PNG|CSV|TXT';
-$config['max_size'] = '2000'; // kb
+// @see vendor/rogeriopradoj/codeigniter/user_guide/libraries/file_uploading.html
+$config['upload_path'] = '../uploads/';
+$config['allowed_types'] = 'csv';
+$config['max_size'] = '2048';

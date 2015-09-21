@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 // DataBeam
-$config['sqlite_data_path'] = '/path/to/db/';
+$config['sqlite_data_path'] = '../uploads/db/';
 $config['github_oauth_id'] = getenv('GITHUB_CLIENT_ID');
 $config['github_oauth_secret'] = getenv('GITHUB_CLIENT_SECRET');
 $config['github_oauth_redirect'] =  'http://' . $_SERVER['SERVER_NAME'] . '/auth/session/github';
