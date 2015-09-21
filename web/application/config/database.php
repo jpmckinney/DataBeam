@@ -55,7 +55,10 @@ $db['default']['hostname'] = $dbopts['host'];
 $db['default']['username'] = $dbopts['user'];
 $db['default']['password'] = $dbopts['pass'];
 $db['default']['database'] = ltrim($dbopts['path'], '/');
-$db['default']['dbdriver'] = 'mysqli';
+if (array_key_exists('port', $dbopts)) {
+  $db['default']['port'] = $dbopts['port'];
+}
+$db['default']['dbdriver'] = $dbopts['scheme'] === 'mysql' ? 'mysqli' : $dbopts['scheme'];
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
