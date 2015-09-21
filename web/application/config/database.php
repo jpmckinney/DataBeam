@@ -49,16 +49,17 @@ $active_group = 'default';
 $active_record = TRUE;
 
 // Heroku
-$dbopts = parse_url(getenv('DATABASE_URL') === FALSE ? getenv('CLEARDB_DATABASE_URL') : getenv('DATABASE_URL'));
+$url = parse_url(getenv('DATABASE_URL') === FALSE ? getenv('CLEARDB_DATABASE_URL') : getenv('DATABASE_URL'));
 
-$db['default']['hostname'] = $dbopts['host'];
-$db['default']['username'] = $dbopts['user'];
-$db['default']['password'] = $dbopts['pass'];
-$db['default']['database'] = ltrim($dbopts['path'], '/');
-if (array_key_exists('port', $dbopts)) {
-  $db['default']['port'] = $dbopts['port'];
+// @see https://devcenter.heroku.com/articles/cleardb#using-cleardb-with-php
+$db['default']['hostname'] = $url['host'];
+$db['default']['username'] = $url['user'];
+$db['default']['password'] = $url['pass'];
+$db['default']['database'] = substr($url['path'], 1);
+if (array_key_exists('port', $url)) {
+  $db['default']['port'] = $url['port'];
 }
-$db['default']['dbdriver'] = $dbopts['scheme'] === 'mysql' ? 'mysqli' : $dbopts['scheme'];
+$db['default']['dbdriver'] = $url['scheme'] === 'mysql' ? 'mysqli' : $url['scheme'];
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
