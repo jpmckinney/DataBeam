@@ -49,7 +49,7 @@ $active_group = 'default';
 $active_record = TRUE;
 
 // Heroku
-$dbopts = parse_url(getenv('DATABASE_URL'));
+$dbopts = parse_url(getenv('DATABASE_URL') === FALSE ? getenv('CLEARDB_DATABASE_URL') : getenv('DATABASE_URL'));
 
 $db['default']['hostname'] = $dbopts['host'];
 $db['default']['username'] = $dbopts['user'];
