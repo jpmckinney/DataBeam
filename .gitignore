@@ -1,15 +1,4 @@
 /vendor
 
-.htaccess
-.idea
-application/config/config.php
-application/config/database.php
-application/config/dbapi.php
-application/config/development
-application/config/local
-application/config/production
-application/config/rest.php
-application/config/staging
-application/config/upload.php
 uploads/*.csv
 uploads/db/*.db
