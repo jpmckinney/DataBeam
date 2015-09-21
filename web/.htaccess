@@ -1,0 +1,4 @@
+# @see vendor/rogeriopradoj/codeigniter/user_guide/general/urls.html
+RewriteEngine On
+RewriteCond $1 !^(index\.php|assets|favicon\.ico|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]
