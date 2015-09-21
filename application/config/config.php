@@ -1,18 +1,11 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
-// Where to store your SQLite database files
-$config['sqlite_data_path'] 	= '/path/to/db/'; // eg /var/www/databeam/uploads/db/
-
-// OAuth Settings
+// DataBeam
+$config['sqlite_data_path'] = '/path/to/db/';
 $config['github_oauth_id'] = getenv('GITHUB_CLIENT_ID');
 $config['github_oauth_secret'] = getenv('GITHUB_CLIENT_SECRET');
-
-// You shouldn't need to edit this unless you're not hosting this a the root of your server
 $config['github_oauth_redirect'] =  'http://' . $_SERVER['SERVER_NAME'] . '/auth/session/github';
-
-$config['default_page_size'] = 50; // this defines the default for the 'limit' parameter in queries
-
+$config['default_page_size'] = 50;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +33,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = ''; // DataBeam
 
 /*
 |--------------------------------------------------------------------------
@@ -238,7 +231,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'n1UK#05=`mY919eXNr?+[SwHpU5n>C{z';
+$config['encryption_key'] = getenv('ENCRYPTION_KEY'); // Heroku
 
 /*
 |--------------------------------------------------------------------------

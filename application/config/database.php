@@ -48,11 +48,14 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
-$db['default']['dbdriver'] = 'mysql';
+// Heroku
+$dbopts = parse_url(getenv('DATABASE_URL'));
+
+$db['default']['hostname'] = $dbopts['host'];
+$db['default']['username'] = $dbopts['user'];
+$db['default']['password'] = $dbopts['pass'];
+$db['default']['database'] = ltrim($dbopts['path'], '/');
+$db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

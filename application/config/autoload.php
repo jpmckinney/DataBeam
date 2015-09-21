@@ -40,7 +40,6 @@
 $autoload['packages'] = array();
 
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Libraries
@@ -53,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session', 'OAuth2' ); // removed gitigniter
+$autoload['libraries'] = array('database', 'session', 'OAuth2'); // DataBeam
 
 
 /*
@@ -65,7 +64,7 @@ $autoload['libraries'] = array('database', 'session', 'OAuth2' ); // removed git
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url'); // DataBeam
 
 
 /*
