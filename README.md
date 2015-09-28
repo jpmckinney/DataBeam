@@ -44,7 +44,7 @@ open http://127.0.0.1:5000
 Replace `REPLACE`:
 
 ```
-heroku create
+heroku apps:create
 heroku addons:create cleardb
 heroku config:set ENV=production
 heroku config:set GITHUB_CLIENT_ID=REPLACE
